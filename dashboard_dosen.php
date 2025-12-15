@@ -1,3 +1,10 @@
+<?php
+session_start();
+if ($_SESSION['role'] != "dosen") {
+    header("Location: login.php");
+}
+?>
+
 <!doctype html>
 <html lang="id">
 <head>
@@ -17,7 +24,7 @@
     </div>
 
     <nav class="nav">
-      <a href="dashboard_dosen.html" class="nav-item">Dashboard Dosen</a>
+      <a href="dashboard_dosen.php" class="nav-item">Dashboard Dosen</a>
       <a href="#proyek-mahasiswa" class="nav-item">Proyek Mahasiswa</a>
       <a href="#" class="nav-item">Penilaian</a>
       <a href="#" class="nav-item">Profil</a>
@@ -131,7 +138,5 @@
       </div>
     </section>
   </main>
-
-<script src="dashboard_dosen.js"></script>
 </body>
 </html>
